@@ -40,7 +40,7 @@ export const colors: Colors = {
   },
   text: {
     primary: '#262626',
-    secondary: '#757575',
+    secondary: '#5856D6',
     disabled: '#9C9C9C',
     inverse: '#FFFFFF',
     error: '#D0421B',
