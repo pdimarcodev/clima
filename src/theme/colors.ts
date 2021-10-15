@@ -16,6 +16,7 @@ export interface Colors {
   text: {
     primary: string;
     secondary: string;
+    tertiary: string;
     disabled: string;
     inverse: string;
     error: string;
@@ -34,13 +35,14 @@ export const colors: Colors = {
     success: '#138000',
   },
   bg: {
-    primary: '#FFFFFF',
+    primary: '#00CCFF',
     secondary: '#000000',
     tertiary: 'blue',
   },
   text: {
-    primary: '#262626',
+    primary: '#FFFFFF',
     secondary: '#5856D6',
+    tertiary: 'purple',
     disabled: '#9C9C9C',
     inverse: '#FFFFFF',
     error: '#D0421B',

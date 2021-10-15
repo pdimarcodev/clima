@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.bg.primary,
   },
   title: {
-    color: theme.colors.text.primary,
+    color: theme.colors.text.secondary,
     fontSize: 35,
     fontWeight: 'bold',
     marginHorizontal: theme.spacings.M,
