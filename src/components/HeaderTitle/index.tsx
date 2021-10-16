@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
-import {Text, View} from 'react-native';
-import {styles} from './styles';
+import {Title, TitleContainer} from './styles';
 
 interface Props {
   title: string;
@@ -8,9 +7,9 @@ interface Props {
 
 const HeaderTitle: FC<Props> = ({title}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
+    <TitleContainer>
+      <Title>{title}</Title>
+    </TitleContainer>
   );
 };
 

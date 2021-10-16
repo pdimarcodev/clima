@@ -39,6 +39,7 @@
 		1D0AE47A65C8663E3B452821 /* Pods-productsApp-productsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productsApp-productsAppTests.release.xcconfig"; path = "Target Support Files/Pods-productsApp-productsAppTests/Pods-productsApp-productsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-productsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-productsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-productsApp-productsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productsApp-productsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-productsApp-productsAppTests/Pods-productsApp-productsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3202E8271B69E30090E92E /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = productsApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-productsApp-productsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-productsApp-productsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-productsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productsApp.debug.xcconfig"; path = "Target Support Files/Pods-productsApp/Pods-productsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E3202E7271B69AF0090E92E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6E3202E8271B69E30090E92E /* Ionicons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6E3202E7271B69AF0090E92E /* Fonts */,
 				13B07FAE1A68108700A75B9A /* productsApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* productsAppTests */,
@@ -145,7 +155,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-productsApp-productsAppTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-productsApp-productsAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

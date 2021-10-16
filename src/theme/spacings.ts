@@ -1,19 +1,19 @@
 export interface Spacings {
-  XXS: number;
-  S: number;
-  M: number;
-  L: number;
-  XL: number;
-  XXL: number;
-  XXXL: number;
+  XXS: string;
+  S: string;
+  M: string;
+  L: string;
+  XL: string;
+  XXL: string;
+  XXXL: string;
 }
 
 export const spacings = {
-  XXS: 3,
-  S: 5,
-  M: 10,
-  L: 12,
-  XL: 16,
-  XXL: 20,
-  XXXL: 30,
+  XXS: '3px',
+  S: '5px',
+  M: '10px',
+  L: '12px',
+  XL: '16px',
+  XXL: '20px',
+  XXXL: '30px',
 };
