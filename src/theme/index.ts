@@ -1,10 +1,6 @@
-import {Colors, colors} from './colors';
-import {Spacings, spacings} from './spacings';
-
-export interface Theme {
-  colors: Colors;
-  spacings: Spacings;
-}
+import {Theme} from '../@types';
+import {colors} from './colors';
+import {spacings} from './spacings';
 
 const theme: Theme = {
   colors,

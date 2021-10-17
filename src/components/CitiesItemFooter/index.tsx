@@ -1,13 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
 import {Divider} from '../../components';
-import theme from '../../theme';
+import {Footer} from './styles';
 
 const CitiesItemFooter = () => {
   return (
     <>
       <Divider />
-      <View style={{marginBottom: theme.spacings.XXL}} />
+      <Footer />
     </>
   );
 };

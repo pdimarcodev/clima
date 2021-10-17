@@ -1,9 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
-import {styles} from './styles';
+import {Line} from './styles';
 
 const Divider = () => {
-  return <View style={styles.line} />;
+  return <Line />;
 };
 
 export default Divider;

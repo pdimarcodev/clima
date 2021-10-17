@@ -1,16 +1,15 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {FlatList} from 'react-native';
 import {
   CitiesItemFooter,
   CitiesMenuItem,
   Divider,
   HeaderTitle,
 } from '../../components';
+import SafeArea from '../../components/SafeArea';
 import Spinner from '../../components/Spinner';
 import {useGetCityById} from '../../hooks/useGetCityById';
 import {citiesArray} from '../../utils/constants';
-import {styles} from './styles';
 
 const HomeScreen = () => {
   const {data} = useGetCityById(citiesArray);
@@ -18,9 +17,8 @@ const HomeScreen = () => {
   if (!data) return <Spinner />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeArea>
       <FlatList
-        contentContainerStyle={styles.flatList}
         data={data}
         renderItem={({item}) => <CitiesMenuItem city={item} />}
         keyExtractor={item => item.id}
@@ -28,7 +26,7 @@ const HomeScreen = () => {
         ListFooterComponent={() => <CitiesItemFooter />}
         ItemSeparatorComponent={() => <Divider />}
       />
-    </SafeAreaView>
+    </SafeArea>
   );
 };
 

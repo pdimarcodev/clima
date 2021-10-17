@@ -1,15 +1,21 @@
-import theme from '../../theme';
 import styled from 'styled-components/native';
+import {StyledProps} from '../../interfaces/Theme';
 
 export const TitleContainer = styled.View`
-  padding-top: ${theme.spacings.XXL};
-  padding-bottom: ${theme.spacings.XXL};
-  padding-horizontal: ${theme.spacings.XXL};
-  background-color: ${theme.colors.bg.primary};
+  padding-top: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.XXL};
+  padding-bottom: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.XXL};
+  padding-horizontal: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.XXL};
+  background-color: ${(props: StyledProps) =>
+    props.theme && props.theme.colors.bg.primary};
 `;
 export const Title = styled.Text`
-  color: ${theme.colors.text.secondary};
+  color: ${(props: StyledProps) =>
+    props.theme && props.theme.colors.text.secondary};
   font-size: 35px;
   font-weight: bold;
-  margin-horizontal: ${theme.spacings.M};
+  margin-horizontal: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.M};
 `;

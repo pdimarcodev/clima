@@ -1,10 +1,11 @@
 import {SafeAreaView} from 'react-native';
 import styled from 'styled-components/native';
-import theme from '../../theme';
+import {StyledProps} from '../../interfaces/Theme';
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  background-color: ${theme.colors.bg.primary};
+  background-color: ${(props: StyledProps) =>
+    props.theme && props.theme.colors.bg.primary};
 `;
 
 export default SafeArea;

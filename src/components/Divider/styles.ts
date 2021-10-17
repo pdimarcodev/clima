@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
-import theme from '../../theme';
+import styled from 'styled-components/native';
+import {StyledProps} from '../../interfaces/Theme';
 
-export const styles = StyleSheet.create({
-  line: {
-    borderBottomWidth: 1,
-    opacity: 0.4,
-    marginVertical: theme.spacings.M,
-    marginHorizontal: theme.spacings.XXL,
-  },
-});
+export const Line = styled.View`
+  border-bottom-width: 1px;
+  opacity: 0.4;
+  margin-vertical: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.M};
+  margin-horizontal: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.XXL};
+`;
