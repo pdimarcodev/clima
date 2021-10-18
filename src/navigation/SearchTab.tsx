@@ -1,17 +1,12 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {DetailScreen, HomeScreen} from '../screens';
-import {City} from '../interfaces/City';
+import {DetailScreen, SearchScreen} from '../screens';
 import theme from '../theme';
-
-export type RootStackParams = {
-  HomeScreen: undefined;
-  DetailScreen: City;
-};
+import {RootStackParams} from './listTab';
 
 const Stack = createStackNavigator<RootStackParams>();
 
-export const Navigation = () => {
+export const SearchTab = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -20,7 +15,7 @@ export const Navigation = () => {
           backgroundColor: theme.colors.bg.primary,
         },
       }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="SearchScreen" component={SearchScreen} />
       <Stack.Screen name="DetailScreen" component={DetailScreen} />
     </Stack.Navigator>
   );

@@ -24,4 +24,6 @@ export const SearchText = styled.TextInput`
   top: 2px;
 `;
 
-//   color: ${(props: StyledProps) => props.theme.colors.bg.primary};//
+export const FoundCityButton = styled.TouchableOpacity``;
+
+export const FoundCity = styled.TextInput``;

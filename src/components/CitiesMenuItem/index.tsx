@@ -12,7 +12,6 @@ import {
 import {Spacer} from '../../components';
 import {getIconUri} from '../../utils/getIconUri';
 import {getTemperature} from '../../utils/getTemperature';
-import theme from '../../theme';
 
 interface Props {
   city: City;
@@ -32,11 +31,7 @@ const CitiesMenuItem: FC<Props> = ({city}) => {
         <WeatherIcon source={{uri: getIconUri(city)}} />
         <TemperatureText>{getTemperature(city, 'actual')}°</TemperatureText>
         <Spacer />
-        <Chevron
-          name="chevron-forward-outline"
-          // color={theme.colors.text.secondary}
-          size={40}
-        />
+        <Chevron name="chevron-forward-outline" size={40} />
       </Container>
     </TouchableOpacity>
   );

@@ -7,3 +7,7 @@ export const Container = styled.View`
   margin-horizontal: ${(props: StyledProps) =>
     props.theme && props.theme.spacings.XXL};
 `;
+
+export const FoundCityButton = styled.TouchableOpacity``;
+
+export const FoundCity = styled.Text``;

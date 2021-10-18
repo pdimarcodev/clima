@@ -1,6 +1,5 @@
 import React from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
-import {RootStackParams} from '../../navigation/navigation';
 import {
   City,
   Container,
@@ -13,7 +12,7 @@ import {
 import {getTemperature} from '../../utils/getTemperature';
 import {getIconUri} from '../../utils/getIconUri';
 import {getWindSpeed} from '../../utils/getWindSpeed';
-import {Text} from 'react-native';
+import {RootStackParams} from '../../navigation/listTab';
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 

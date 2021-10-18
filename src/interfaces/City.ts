@@ -47,6 +47,10 @@ export interface City {
   weather: Weather;
 }
 
-export interface CityResponse {
+export interface CityByIdResponse {
   getCityById?: City[];
+}
+
+export interface CityByNameResponse {
+  getCityByName?: City;
 }

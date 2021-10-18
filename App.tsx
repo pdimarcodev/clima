@@ -5,7 +5,7 @@ import {ApolloProvider} from '@apollo/react-hooks';
 import {client} from './src/apollo/client';
 import {ThemeProvider} from 'styled-components';
 import theme from './src/theme';
-import {Tabs} from './src/navigation/tabs';
+import {Tabs} from './src/navigation/Tabs';
 
 const App = () => {
   return (
