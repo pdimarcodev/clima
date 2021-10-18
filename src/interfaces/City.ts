@@ -1,9 +1,13 @@
+interface IObjectKeys {
+  [key: string]: number;
+}
+
 export interface Coordinates {
   lon: number;
   lat: number;
 }
 
-export interface Temperature {
+export interface Temperature extends IObjectKeys {
   actual: number;
   feelsLike: number;
   min: number;

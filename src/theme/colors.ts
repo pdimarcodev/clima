@@ -17,6 +17,8 @@ export interface Colors {
     primary: string;
     secondary: string;
     tertiary: string;
+    quaternary: string;
+    quinary: string;
     disabled: string;
     inverse: string;
     error: string;
@@ -36,13 +38,15 @@ export const colors: Colors = {
   },
   bg: {
     primary: '#00CCFF',
-    secondary: '#000000',
+    secondary: '#00CCFFB0',
     tertiary: 'blue',
   },
   text: {
     primary: '#FFFFFF',
     secondary: '#5856D6',
     tertiary: 'purple',
+    quaternary: '#000000',
+    quinary: '#000000B0',
     disabled: '#9C9C9C',
     inverse: '#FFFFFF',
     error: '#D0421B',

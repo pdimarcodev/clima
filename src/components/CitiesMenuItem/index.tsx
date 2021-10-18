@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation, CommonActions} from '@react-navigation/native';
 import {City} from '../../interfaces/City';
 import {
   Chevron,
@@ -22,15 +22,19 @@ const CitiesMenuItem: FC<Props> = ({city}) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() =>
+        navigation.dispatch(CommonActions.navigate('DetailScreen', city))
+      }>
       <Container>
         <CitiText>{city.name}</CitiText>
         <WeatherIcon source={{uri: getIconUri(city)}} />
-        <TemperatureText>{getTemperature(city)}°</TemperatureText>
+        <TemperatureText>{getTemperature(city, 'actual')}°</TemperatureText>
         <Spacer />
         <Chevron
           name="chevron-forward-outline"
-          color={theme.colors.text.secondary}
+          // color={theme.colors.text.secondary}
           size={40}
         />
       </Container>

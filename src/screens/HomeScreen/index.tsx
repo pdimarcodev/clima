@@ -6,10 +6,10 @@ import {
   Divider,
   HeaderTitle,
 } from '../../components';
-import SafeArea from '../../components/SafeArea';
 import Spinner from '../../components/Spinner';
 import {useGetCityById} from '../../hooks/useGetCityById';
 import {citiesArray} from '../../utils/constants';
+import {Container} from './styles';
 
 const HomeScreen = () => {
   const {data} = useGetCityById(citiesArray);
@@ -17,7 +17,7 @@ const HomeScreen = () => {
   if (!data) return <Spinner />;
 
   return (
-    <SafeArea>
+    <Container>
       <FlatList
         data={data}
         renderItem={({item}) => <CitiesMenuItem city={item} />}
@@ -26,7 +26,7 @@ const HomeScreen = () => {
         ListFooterComponent={() => <CitiesItemFooter />}
         ItemSeparatorComponent={() => <Divider />}
       />
-    </SafeArea>
+    </Container>
   );
 };
 
