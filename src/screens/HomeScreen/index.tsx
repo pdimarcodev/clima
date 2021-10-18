@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   CitiesItemFooter,
   CitiesMenuItem,
@@ -12,9 +13,28 @@ import {citiesArray} from '../../utils/constants';
 import {Container} from './styles';
 
 const HomeScreen = () => {
-  const {data} = useGetCityById(citiesArray);
+  const [cities, setCities] = useState<string[]>([]);
+  const {data, loading, error} = useGetCityById(cities);
 
-  if (!data) return <Spinner />;
+  const setInitialCitiList = async () => {
+    const storedCities = await AsyncStorage.getItem('cities');
+    if (!storedCities) {
+      await AsyncStorage.setItem('cities', JSON.stringify(citiesArray));
+      setCities(citiesArray);
+    } else {
+      setCities(JSON.parse(storedCities));
+    }
+  };
+
+  useEffect(() => {
+    setInitialCitiList();
+  }, []);
+
+  useEffect(() => {
+    console.log(cities);
+  }, [cities]);
+
+  if (loading) return <Spinner />;
 
   return (
     <Container>

@@ -10,4 +10,11 @@ export const Container = styled.View`
 
 export const FoundCityButton = styled.TouchableOpacity``;
 
-export const FoundCity = styled.Text``;
+export const FoundCity = styled.Text`
+  font-size: 20px;
+  margin-top: ${(props: StyledProps) => props.theme && props.theme.spacings.M};
+  margin-horizontal: ${(props: StyledProps) =>
+    props.theme && props.theme.spacings.XXL};
+  color: ${(props: StyledProps) =>
+    props.theme && props.theme.colors.text.quaternary};
+`;

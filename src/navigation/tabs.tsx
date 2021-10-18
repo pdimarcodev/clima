@@ -2,8 +2,8 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import theme from '../theme';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {ListTab} from './listTab';
-import {SearchTab} from './searchTab';
+import {ListTab} from './ListTab';
+import {SearchTab} from './SearchTab';
 
 const Tab = createBottomTabNavigator();
 

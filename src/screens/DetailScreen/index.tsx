@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   City,
   Container,
@@ -13,14 +14,28 @@ import {getTemperature} from '../../utils/getTemperature';
 import {getIconUri} from '../../utils/getIconUri';
 import {getWindSpeed} from '../../utils/getWindSpeed';
 import {RootStackParams} from '../../navigation/listTab';
+import {Text} from 'react-native';
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 
 const DetailScreen = ({route}: Props) => {
   const city = route.params;
+  const [citiIsAdded, setCitiIsAdded] = useState(false);
+
+  const checkCitiIsAdded = async () => {
+    const storedCities = await AsyncStorage.getItem('cities');
+    if (storedCities && JSON.parse(storedCities).includes(city.id)) {
+      setCitiIsAdded(true);
+    }
+  };
+
+  useEffect(() => {
+    checkCitiIsAdded();
+  }, []);
 
   return (
     <Container>
+      {!citiIsAdded && <Text>Add</Text>}
       <Temperature>{getTemperature(city, 'actual')}°</Temperature>
       <WeatherIcon source={{uri: getIconUri(city)}} />
       <City>{city.name}</City>

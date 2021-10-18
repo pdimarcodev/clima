@@ -2,7 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {DetailScreen, SearchScreen} from '../screens';
 import theme from '../theme';
-import {RootStackParams} from './listTab';
+import {RootStackParams} from './ListTab';
 
 const Stack = createStackNavigator<RootStackParams>();
 
