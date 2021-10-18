@@ -39,7 +39,7 @@ export const colors: Colors = {
   bg: {
     primary: '#00CCFF',
     secondary: '#00CCFFB0',
-    tertiary: 'blue',
+    tertiary: '#F3F1F3',
   },
   text: {
     primary: '#FFFFFF',
