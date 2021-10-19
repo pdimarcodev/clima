@@ -16,7 +16,7 @@ export const SearchTab = () => {
         },
       }}>
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
-      <Stack.Screen name="DetailScreen" component={DetailScreen} />
+      <Stack.Screen name="SearchDetailScreen" component={DetailScreen} />
     </Stack.Navigator>
   );
 };

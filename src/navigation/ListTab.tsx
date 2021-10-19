@@ -8,6 +8,7 @@ export type RootStackParams = {
   HomeScreen: undefined;
   DetailScreen: City;
   SearchScreen: undefined;
+  SearchDetailScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();

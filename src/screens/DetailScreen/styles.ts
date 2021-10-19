@@ -8,6 +8,13 @@ export const Container = styled.View`
     props.theme && props.theme.colors.bg.secondary};
 `;
 
+export const AddButton = styled.Button`
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: ${(props: StyledProps) => props.theme.colors.text.quaternary};
+`;
+
 export const Temperature = styled.Text`
   margin-top: 30px;
   text-align: right;

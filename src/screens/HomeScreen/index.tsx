@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
+import {useIsFocused} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   CitiesItemFooter,
@@ -13,8 +14,9 @@ import {citiesArray} from '../../utils/constants';
 import {Container} from './styles';
 
 const HomeScreen = () => {
+  const isFocused = useIsFocused();
   const [cities, setCities] = useState<string[]>([]);
-  const {data, loading, error} = useGetCityById(cities);
+  const {data, loading, error, refetch} = useGetCityById(cities);
 
   const setInitialCitiList = async () => {
     const storedCities = await AsyncStorage.getItem('cities');
@@ -30,15 +32,12 @@ const HomeScreen = () => {
     setInitialCitiList();
   }, []);
 
-  useEffect(() => {
-    console.log(cities);
-  }, [cities]);
-
   if (loading) return <Spinner />;
 
   return (
     <Container>
       <FlatList
+        contentContainerStyle={{flexGrow: 1}}
         data={data}
         renderItem={({item}) => <CitiesMenuItem city={item} />}
         keyExtractor={item => item.id}
