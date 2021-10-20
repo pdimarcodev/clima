@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {favoriteCities} from '../../apollo/cache';
 import {
   AddButton,
   City,
@@ -21,22 +22,17 @@ interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 const DetailScreen = ({route}: Props) => {
   const city = route.params;
   const [citiIsAdded, setCitiIsAdded] = useState(false);
-  const [favoriteCities, setFavoriteCities] = useState<string[]>([]);
 
-  const checkCitiIsAdded = async () => {
-    const storedCities = await AsyncStorage.getItem('cities');
-    console.log(storedCities);
-    const array = storedCities ? JSON.parse(storedCities) : [];
-    setFavoriteCities(array);
-    if (array.includes(city.id)) {
+  const checkCitiIsAdded = () => {
+    if (favoriteCities().includes(city.id)) {
       setCitiIsAdded(true);
     }
   };
 
   const addCity = async () => {
-    const newArray = favoriteCities.concat(city.id);
+    const newArray = [...favoriteCities(), city.id];
+    favoriteCities(newArray);
     await AsyncStorage.setItem('cities', JSON.stringify(newArray));
-    setFavoriteCities([...favoriteCities, city.id]);
     setCitiIsAdded(true);
   };
 
@@ -46,7 +42,7 @@ const DetailScreen = ({route}: Props) => {
 
   return (
     <Container>
-      {!citiIsAdded && <AddButton title="Add" onPress={addCity} />}
+      {!citiIsAdded && <AddButton title="Add To Favorites" onPress={addCity} />}
       <Temperature>{getTemperature(city, 'actual')}°</Temperature>
       <WeatherIcon source={{uri: getIconUri(city)}} />
       <City>{city.name}</City>

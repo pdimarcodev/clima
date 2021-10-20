@@ -1,14 +1,13 @@
-import {CommonActions} from '@react-navigation/routers';
-import {StackScreenProps} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
+import {Keyboard} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
+import {CommonActions} from '@react-navigation/routers';
 import {SearchInput} from '../../components';
 import {FoundCity, FoundCityButton} from './styles';
 import {useDebounce} from '../../hooks/useDebounce';
 import {useGetCityByName} from '../../hooks/useGetCityByName';
 import {useSearch} from '../../hooks/useSearch';
 import {Container} from './styles';
-import {Keyboard} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
 
 const SearchScreen = () => {
   const {query, setQuery, handleChange} = useSearch();
@@ -23,7 +22,6 @@ const SearchScreen = () => {
 
   useEffect(() => {
     handleChange(debounced);
-    console.log(debounced);
   }, [debounced]);
 
   return (
