@@ -16,10 +16,10 @@ export const AddButton = styled.Button`
 `;
 
 export const Temperature = styled.Text`
-  margin-top: 30px;
+  margin-top: ${(props: StyledProps) => props.theme.spacings.XXXL};
+  margin-right: ${(props: StyledProps) => props.theme.spacings.XL};
   text-align: right;
   font-size: 100px;
-  margin-right: 15px;
   color: ${(props: StyledProps) => props.theme.colors.text.primary};
 `;
 
@@ -27,11 +27,11 @@ export const WeatherIcon = styled.Image`
   align-self: center;
   width: 200px;
   height: 100px;
-  margin-top: 10px;
+  margin-top: ${(props: StyledProps) => props.theme.spacings.M};
 `;
 
 export const City = styled.Text`
-  margin-top: 15px;
+  margin-top: ${(props: StyledProps) => props.theme.spacings.XL};
   text-align: center;
   font-size: 35px;
   font-weight: bold;
@@ -41,7 +41,7 @@ export const City = styled.Text`
 export const Data = styled.Text`
   text-align: left;
   font-size: 30px;
-  margin-left: 30px;
+  margin-left: ${(props: StyledProps) => props.theme.spacings.XXXL};
   color: ${(props: StyledProps) => props.theme.colors.text.quaternary};
 `;
 
@@ -60,7 +60,7 @@ export const WindArrow = styled(Icon).attrs((props: WindArrowProps) => ({
   width: 30px;
   height: 30px;
   margin-top: 4px;
-  margin-left: 15px;
+  margin-left: ${(props: StyledProps) => props.theme.spacings.XL};
   transform: ${props => props.deg};
   color: ${(props: StyledProps) => props.theme.colors.text.quinary};
 `;

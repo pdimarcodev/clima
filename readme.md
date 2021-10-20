@@ -34,3 +34,22 @@ Requerimientos Deseables
 Sugerencias
 
 Usar apollo y styled-componentes.
+
+<br/>
+
+# To Start 🚀
+
+npm install / yarn install
+
+npx react-native run-android
+
+<br/>
+<br/>
+
+<p >
+<img src="./screenShots/screen1.png" width="300"/>
+<img src="./screenShots/screen2.png" width="300"/>
+<img src="./screenShots/screen3.png" width="300"/>
+<img src="./screenShots/screen4.png" width="300"/>
+</p>
+<br/>

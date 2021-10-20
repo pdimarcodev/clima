@@ -65,7 +65,7 @@ const HomeScreen = () => {
             refreshing={refreshing}
             onRefresh={onRefresh}
             progressViewOffset={10}
-            progressBackgroundColor="#5856D6"
+            progressBackgroundColor="blue"
             colors={['white', 'red', 'orange']}
           />
         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import theme from '../theme';
 import Icon from 'react-native-vector-icons/Ionicons';
+import theme from '../theme';
 import {ListTab} from './ListTab';
 import {SearchTab} from './SearchTab';
 
