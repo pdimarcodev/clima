@@ -27,7 +27,7 @@ const SearchScreen = () => {
   return (
     <Container>
       <SearchInput query={query} setQuery={setQuery} />
-      {!loading && (
+      {!loading && data && (
         <FoundCityButton activeOpacity={0.8} onPress={onPress}>
           <FoundCity>
             {data?.name}, {data?.country}
