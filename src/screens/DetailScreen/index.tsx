@@ -16,6 +16,7 @@ import {getTemperature} from '../../utils/getTemperature';
 import {getIconUri} from '../../utils/getIconUri';
 import {getWindSpeed} from '../../utils/getWindSpeed';
 import {RootStackParams} from '../../navigation/ListTab';
+import {BackButton} from '../../components';
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 
@@ -43,6 +44,7 @@ const DetailScreen = ({route}: Props) => {
   return (
     <Container>
       {!citiIsAdded && <AddButton title="Add To Favorites" onPress={addCity} />}
+      <BackButton />
       <Temperature>{getTemperature(city, 'actual')}°</Temperature>
       <WeatherIcon source={{uri: getIconUri(city)}} />
       <City>{city.name}</City>
