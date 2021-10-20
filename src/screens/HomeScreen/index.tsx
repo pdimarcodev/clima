@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, RefreshControl} from 'react-native';
+import {Alert, FlatList, RefreshControl} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   CitiesItemFooter,
@@ -22,8 +22,12 @@ const HomeScreen = () => {
   const setInitialCitiList = async () => {
     const storedCities = await AsyncStorage.getItem('cities');
     if (!storedCities?.length) {
-      await AsyncStorage.setItem('cities', JSON.stringify(citiesArray));
-      favoriteCities(citiesArray);
+      try {
+        await AsyncStorage.setItem('cities', JSON.stringify(citiesArray));
+        favoriteCities(citiesArray);
+      } catch (error: any) {
+        Alert.alert(error.message);
+      }
     } else {
       favoriteCities(JSON.parse(storedCities));
     }
@@ -44,6 +48,8 @@ const HomeScreen = () => {
   // }, [isFocused]);
 
   if (loading) return <Spinner />;
+
+  if (error) return Alert.alert(error.message);
 
   return (
     <Container>

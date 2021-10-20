@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Keyboard} from 'react-native';
+import {Alert, Keyboard} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {CommonActions} from '@react-navigation/routers';
 import {SearchInput} from '../../components';
@@ -23,6 +23,8 @@ const SearchScreen = () => {
   useEffect(() => {
     handleChange(debounced);
   }, [debounced]);
+
+  if (error) return Alert.alert(error.message);
 
   return (
     <Container>
