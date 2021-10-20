@@ -43,13 +43,11 @@ const HomeScreen = () => {
     setInitialCitiList();
   }, []);
 
-  // useEffect(() => {
-  //   refetch();
-  // }, [isFocused]);
+  useEffect(() => {
+    error && Alert.alert(error.message);
+  }, [error]);
 
   if (loading) return <Spinner />;
-
-  if (error) return Alert.alert(error.message);
 
   return (
     <Container>

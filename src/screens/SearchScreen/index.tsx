@@ -17,14 +17,16 @@ const SearchScreen = () => {
 
   const onPress = () => {
     Keyboard.dismiss();
-    navigation.dispatch(CommonActions.navigate('DetailScreen', data));
+    navigation.dispatch(CommonActions.navigate('SearchDetailScreen', data));
   };
 
   useEffect(() => {
     handleChange(debounced);
   }, [debounced]);
 
-  if (error) return Alert.alert(error.message);
+  useEffect(() => {
+    error && Alert.alert(error.message);
+  }, [error]);
 
   return (
     <Container>
