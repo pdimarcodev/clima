@@ -12,10 +12,8 @@ import {useGetCityById} from '../../hooks/useGetCityById';
 import {citiesArray} from '../../utils/constants';
 import {Container} from './styles';
 import {favoriteCities} from '../../apollo/cache';
-import {useIsFocused} from '@react-navigation/core';
 
 const HomeScreen = () => {
-  const isFocused = useIsFocused();
   const [refreshing, setRefreshing] = useState(false);
   const {data, loading, error, refetch} = useGetCityById(favoriteCities());
 
@@ -52,6 +50,7 @@ const HomeScreen = () => {
   return (
     <Container>
       <FlatList
+        testID="citi-list"
         contentContainerStyle={{flexGrow: 1}}
         data={data}
         renderItem={({item}) => <CitiesMenuItem city={item} />}
